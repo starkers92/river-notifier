@@ -43,18 +43,15 @@ class River:
         raw_html = get_url.simple_get(self.rain_gauge)
 
         html = BeautifulSoup(raw_html, 'html.parser') #parse using html parser
+        #html.prettify()
+        html.get_text()
+        for string in html.stripped_strings:
+            if string=='Paterson River':
+                print(string)
+            
        
-        raw_list=[] #search through html, all tabulated data is added to a list
-        my_list = []
-        last_td_tag = html.find("td")
-        while True:
-            print(last_td_tag)
-            last_td_tag = last_td_tag.next_element
-            
         
-            
-            
-        
+
         
     def plot_height_list(self):
         fig, ax = plt.subplots(1,1) #now plot the river level, getting a tick mark every three hours
