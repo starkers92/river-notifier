@@ -44,10 +44,12 @@ class River:
 
         html = BeautifulSoup(raw_html, 'html.parser') #parse using html parser
         #html.prettify()
-        html.get_text()
+        raw_string_list = []
         for string in html.stripped_strings:
-            if string=='Paterson River':
-                print(string)
+            raw_string_list.append(string)
+        
+        
+        
             
        
         
